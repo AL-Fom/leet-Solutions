@@ -1,0 +1,17 @@
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        #Easy solution
+        #str_x=str(x)
+        #return str_x==str_x[::-1]
+        #2 arrays comparison
+        #a negative number can't be a palindrome
+        if x <0:
+            return False
+        #concatenating x to be a string
+        str_x=str(x)
+        #we can now put int into a list
+        lst=list(str_x)
+        #reverse the lsit 
+        lst_rev=lst[::-1]
+        #if list and list backwards return true
+        return lst==lst_rev
