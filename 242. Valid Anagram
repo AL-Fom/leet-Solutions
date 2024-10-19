@@ -1,0 +1,20 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        #The easy way is just comparing both strings sorted
+        # // return sorted(s) == sorted(t)
+        #Dictionary method
+        #They cant be anagrams if they're different in size
+        if len(s)!=len(t):
+            return False
+        #Creating dictionaries for s and t
+        dictS, dictT = {}, {}
+        #Since they're both the same length we can use i for both instances 
+        for i in range(len(s)):
+            #going through the list it adds 1 to the dictionary so it will look like {"a":3, "n":1, "g":1, "r":1, "m":1}
+            dictS[s[i]] = 1 + dictS.get(s[i],0)
+            dictT[t[i]] = 1 + dictT.get(t[i],0)
+        #finally compare the dictionaries 
+        for c in dictS:
+            if dictS[c] != dictT.get(c, 0):
+                return False
+        return True
