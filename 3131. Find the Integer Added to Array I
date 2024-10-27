@@ -1,0 +1,10 @@
+class Solution:
+    def addedInteger(self, nums1: List[int], nums2: List[int]) -> int:
+        newnums1=sorted(nums1)
+        newnums2=sorted(nums2)
+        return newnums2[0]-newnums1[0]
+
+
+O(n log n)
+Runtime: 4 ms
+Memory Usage: 16.7 MB
